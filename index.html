@@ -21,6 +21,165 @@
   <!-- Custom styles for this template -->
   <link href="css/resume.css" rel="stylesheet">
 
+<style>
+.progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #44484b;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.progress.green .progress-bar{
+    border-color: greenyellow;
+}
+.progress.green .progress-left .progress-bar{
+    animation: loading-5 1.5s linear forwards 1.8s;
+}
+.progress.blue .progress-bar{
+    border-color: skyblue;
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-4 1s linear forwards 1.8s;
+}
+.progress.orange .progress-bar{
+    border-color: orange;
+}
+.progress.orange .progress-left .progress-bar{
+    animation: loading-3 1.2s linear forwards 1.8s;
+}
+.progress.red .progress-bar{
+    border-color: pink;
+}
+.progress.red .progress-left .progress-bar{
+    animation: loading-2 0.4s linear forwards 1.8s;
+}
+
+/* 100% */
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+/* 50% */
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+/* 60% */
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+/* 70% */
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
+    }
+}
+/* 80% */
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(108deg);
+        transform: rotate(108deg);
+    }
+    
+}
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 20px; }
+}
+
+</style>  
 </head>
 
 <body id="page-top">
@@ -217,12 +376,415 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+    <section class="resume-section p-3 p-lg-6 d-flex align-items-center" id="skills">
       <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
+        <h2 class="mb-5">Skills<span class="subheading mb-3">  &amp; expertise level</span></h2>
+        
         <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
+        <ul class="list-inline">
+          <li class="list-inline-item" style="color:greenyellow"><i class="fas fa-dot-circle"></i> Strong</li>
+          <li class="list-inline-item" style="color:skyblue"><i class="fas fa-dot-circle"></i> Mid</li>
+          <li class="list-inline-item" style="color:orange"><i class="fas fa-dot-circle"></i> Intermediate</li>
+          <li class="list-inline-item" style="color:pink"><i class="fas fa-dot-circle"></i>  Beginner</li>
+        </ul>
+        <div class="card-deck">
+              <!-- first row of cards -->
+              <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                  <div class="card-header">
+                    
+                    <div class="">
+                      <div class="progress green">
+                          <span class="progress-left">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <span class="progress-right">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <div class="progress-value">80%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                      <h4>C#</h4>
+                  </div>
+              </div>
+
+              <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                <div class="card-header">
+                  <div class="">
+                    <div class="progress green">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">80%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                  <h4>ASP.NET Mvc</h4>
+                </div>
+            </div>
+
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <h4>ASP.NET Mvc Core</h4>
+              </div>
+            </div>
+          
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                <div class="">
+                  <div class="progress green">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">80%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <h4>JQuery</h4>
+              </div>
+            </div>
+            
+            <!-- Second row of cards -->
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+              <h4><i class="fab fa-angular"></i> Angular</h4>
+              </div>
+            </div>
+            
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <h4>TypeScript</h4>
+              </div>
+            </div>
+
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+              <h4><i class="fab fa-html5"></i> HTML5</h4>
+              </div>
+            </div>
+
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+              <h4><i class="fab fa-css3-alt"></i> CSS3</h4>
+              </div>
+          </div>
+
+          <!-- Third row of cards -->
+
+          <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+            <div class="card-header">
+              <div class="">
+                <div class="progress orange">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">60%</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+            <h4><i class="fab fa-bootstrap"></i> Bootstrap</h4>
+            </div>
+          </div>
+            
+          <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+            <div class="card-header">
+              <div class="">
+                <div class="progress orange">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">60%</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+            <h4><i class="fab fa-js-square"></i> JavaScript</h4>
+            </div>
+        </div>
+          
+
+        <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+          <div class="card-header">
+            <div class="">
+              <div class="progress red">
+                  <span class="progress-left">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h4>Ionic 3/4</h4> 
+          </div>
+        </div>
+             
+        <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+          <div class="card-header">
+            <div class="">
+              <div class="progress red">
+                  <span class="progress-left">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h4><i class="fab fa-node-js"></i> NodeJs</h4>
+          </div>
+        </div>
+            <!-- Fourth row of cards -->
+            <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+              <div class="card-header">
+                
+                <div class="">
+                  <div class="progress blue">
+                      <span class="progress-left">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                          <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">70%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+              <h4><i class="fab fa-java"></i> Java</h4>
+              </div>
+          </div>
+
+          <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+            <div class="card-header">
+              <div class="">
+                <div class="progress red">
+                    <span class="progress-left">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <span class="progress-right">
+                        <span class="progress-bar"></span>
+                    </span>
+                    <div class="progress-value">50%</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+            <h4><i class="fab fa-python"></i> Python</h4>
+            </div>
+        </div>
+
+        
+        
+        <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+          <div class="card-header">
+            
+            <div class="">
+              <div class="progress red">
+                  <span class="progress-left">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">50%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+              <h4>C/C++</h4>
+          </div>
+      </div>
+
+        <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+          <div class="card-header">
+            <div class="">
+              <div class="progress orange">
+                  <span class="progress-left">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                      <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">60%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h4><i class="fab fa-npm"></i> npm</h4>
+          </div>
+        </div>
+
+                    <!-- Fifth row of cards -->
+                    <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                      <div class="card-header">
+                        
+                        <div class="">
+                          <div class="progress blue">
+                              <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                              </span>
+                              <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                              </span>
+                              <div class="progress-value">70%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer text-center">
+                      <h4><i class="fab fa-github"></i> GIT</h4>
+                      </div>
+                  </div>
+        
+                  <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                    <div class="card-header">
+                      <div class="">
+                        <div class="progress orange">
+                            <span class="progress-left">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <span class="progress-right">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value">60%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer text-center">
+                    <h4>TFS</h4>
+                    </div>
+                </div>
+        
+                <!-- <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                  <div class="card-header">
+                    <div class="">
+                      <div class="progress orange">
+                          <span class="progress-left">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <span class="progress-right">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <div class="progress-value">60%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                  <h4></h4>
+                  </div>
+                </div>
+              
+                <div class="card m-1" style="min-width: 18rem; max-width:25%;">
+                  <div class="card-header">
+                    <div class="">
+                      <div class="progress orange">
+                          <span class="progress-left">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <span class="progress-right">
+                              <span class="progress-bar"></span>
+                          </span>
+                          <div class="progress-value">60%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                    <h4></h4>
+                  </div>
+                </div> -->
+        <!-- End of fifth cards row -->
+      </div>
+      
+        
+        <!-- <ul class="list-inline dev-icons">
           <li class="list-inline-item">
             C#
           </li>
@@ -273,7 +835,7 @@
           <li class="list-inline-item">
             <i class="fab fa-bootstrap"></i>
           </li>
-        </ul>
+        </ul> -->
 
           
         <div class="subheading mb-3">Workflow</div>
@@ -315,36 +877,16 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
       <div class="w-100">
         <h2 class="mb-5">Awards &amp; Certifications</h2>
-        <p>06-2016 Oracle	Certified	Professional,	Java	SE	8	Programmer</p>
-        <p>03-2016 Oracle	Certified	Associate,	Java	SE	8	Programmer</p>
+        <p></p>
+        <p></p>
 
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Google Analytics Certified Developer</li>
+            06-2016 Oracle	Certified	Professional,	Java	SE	8	Programmer</li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Mobile Web Specialist - Google Certification</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            2<sup>nd</sup>
-            Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            1<sup>st</sup>
-            Place - James Buchanan High School - Hackathon 2006</li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            3<sup>rd</sup>
-            Place - James Buchanan High School - Hackathon 2005</li>
+            03-2016 Oracle	Certified	Associate,	Java	SE	8	Programmer</li>
         </ul>
       </div>
     </section>
